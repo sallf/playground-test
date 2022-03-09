@@ -9,7 +9,6 @@ module.exports = {
       $hooks: path.resolve(__dirname, 'src/hooks/'),
       $images: path.resolve(__dirname, 'src/assets/images/'),
       $models: path.resolve(__dirname, 'src/models/'),
-      $route: path.resolve(__dirname, 'src/route/'),
       $screens: path.resolve(__dirname, 'src/screens/'),
       $scss: path.resolve(__dirname, 'src/scss/'),
     },

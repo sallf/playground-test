@@ -1,3 +1,6 @@
+// --------------------- ===
+//  COLORS
+// ---------------------
 /* --------------------- ===
   PRIMARY COLORS
 --------------------------- */
@@ -9,21 +12,6 @@ $colors-light: (
 // contrast (4.5:1) with our white text (#FFFFFF)
 $colors-dark: (
   'black': #222222,
-);
-
-/* --------------------- ===
-  TEXT
---------------------------- */
-$colors-text: (
-  'black': map-get($colors-dark, 'black'),
-  'white': map-get($colors-light, 'white'),
-);
-
-/* --------------------- ===
-  INTERFACE
---------------------------- */
-$colors-interface: ( // TODO let's break these out into multiple maps
-  'nav-background': map-get($colors-light, 'white-lilac'), // Example, remove
 );
 
 /* --------------------- ===
@@ -49,3 +37,18 @@ $colors-translucent: (
   'white-80': rgba(255, 255, 255, .8),
   'white-90': rgba(255, 255, 255, .9),
 );
+
+// --------------------- ===
+//  USES
+// ---------------------
+/* --------------------- ===
+  TEXT
+--------------------------- */
+$colors-text: (
+  'black': map-get($colors-dark, 'black'),
+  'white': map-get($colors-light, 'white'),
+);
+
+/* --------------------- ===
+  INTERFACE
+--------------------------- */

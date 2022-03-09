@@ -1,12 +1,7 @@
 /* --------------------- ===
-  SITE SCALE RATIO
---------------------------- */
-$scale-ratio: 1.2; //based on 1.2 minor 3rd scale
-
-/* --------------------- ===
   TYPOGRAPHY
 --------------------------- */
-$font-family-sans-serif: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+$font-family-sans-serif: 'Helvetica Neue', Arial, Helvetica, sans-serif;
 $font-family-small: Arial, Helvetica, sans-serif;
 $font-family-font-awesome: 'Font Awesome 5 Free';
 
@@ -34,24 +29,6 @@ $text-lg: 1.5rem;
 $text-md: $base-font-size;
 $text-sm: .833rem;
 $text-xs: .7rem;
-
-/* --------------------- ===
-  STANDARD STYLES
---------------------------- */
-$standard-transition: all .32s ease-out;
-
-/* --------------------- ===
-  MENUS
---------------------------- */
-$dropdown-pointer-size: 12px;
-$dropdown-padding: 10px;
-$check-box-sizes: (
-  'box': 18px,
-  'check': 10px,
-  'top': 4px,
-  'left': 3px,
-);
-$sidebar-icon-width: 20px;
 
 /* --------------------- ===
   Z-INDEX
