@@ -1,9 +1,14 @@
-import React, { Suspense, useRef } from 'react';
+import React, { useState } from 'react';
 import styles from './index.scss';
 
 const HomeScreen = () => {
+  // --------------------- ===
+  //  STATE
+  // ---------------------
+  const [isModal, setIsModal] = useState(false);
+
   return (
-    <div>
+    <div className={styles.wrapper}>
       <p>Home Screen</p>
     </div>
   );

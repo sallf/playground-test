@@ -58,3 +58,7 @@ $colors-text: (
 /* --------------------- ===
   INTERFACE
 --------------------------- */
+$layout-gradient: (
+  'left': map-get($colors-decoration, 'trustedPurple'),
+  'right': map-get($colors-decoration, 'marion'),
+);
