@@ -4,6 +4,7 @@ const path = require('path');
 module.exports = {
   resolve: {
     alias: {
+      $api: path.resolve(__dirname, 'src/api/'),
       $common: path.resolve(__dirname, 'src/common/'),
       $components: path.resolve(__dirname, 'src/components/'),
       $hooks: path.resolve(__dirname, 'src/hooks/'),
