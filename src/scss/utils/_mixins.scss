@@ -33,3 +33,17 @@
     background-color: #{$background} !important;
   }
 }
+
+// Mobile first
+@mixin breakpoint-up {
+  @media (min-width: $sm-breakpoint-max) {
+    @content;
+  }
+}
+
+// Desktop first
+@mixin breakpoint-max {
+  @media (max-width: $sm-breakpoint-min) {
+    @content;
+  }
+}

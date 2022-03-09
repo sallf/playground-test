@@ -11,8 +11,11 @@ $colors-light: (
 // These colors have sufficient
 // contrast (4.5:1) with our white text (#FFFFFF)
 $colors-dark: (
-  'black': #222222,
+  'black': #222,
   'mint': #1BBA8F,
+  'blackRock': #100127,
+  'indigo': #3F0E70,
+  'blueRock': #39048B,
 );
 
 $colors-decoration: (
@@ -61,4 +64,10 @@ $colors-text: (
 $layout-gradient: (
   'left': map-get($colors-decoration, 'trustedPurple'),
   'right': map-get($colors-decoration, 'marion'),
+);
+
+$table-colors: (
+  'background': linear-gradient(45deg, map-get($colors-dark, 'indigo'), map-get($colors-dark, 'blueRock')),
+  'inset': map-get($colors-dark, 'blackRock'),
+  'header': map-get($colors-dark, 'indigo'),
 );

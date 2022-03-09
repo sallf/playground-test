@@ -35,3 +35,9 @@ $text-xs: .7rem;
 --------------------------- */
 $z-index-background: -1;
 $z-index-lift: 9;
+
+// --------------------- ===
+//  BREAKPOINTS
+// ---------------------
+$sm-breakpoint-min: 800px;
+$sm-breakpoint-max: $sm-breakpoint-min + 1;

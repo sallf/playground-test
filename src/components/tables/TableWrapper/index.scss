@@ -1,0 +1,19 @@
+@import '$scss/local';
+// --------------------- ===
+//  LOCAL VARS
+// ---------------------
+$table-br: 1rem;
+
+// --------------------- ===
+//  SCSS
+// ---------------------
+.wrapper {
+  padding: 2px;
+  background: map-get($table-colors, 'background');
+  border-radius: $table-br;
+}
+
+.inset {
+  background: map-get($table-colors, 'inset');
+  border-radius: $table-br;
+}
