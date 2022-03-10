@@ -17,7 +17,6 @@ import Input from '$components/forms/Input';
 import ModalCta from '$components/buttons/ModalCta';
 
 const err = 'This is not a valid ETH address. Please try again.';
-const success = 'Claim successfully submitted!';
 
 const EarningsModal = (props) => {
   // --------------------- ===
@@ -55,16 +54,11 @@ const EarningsModal = (props) => {
       fetch(request)
         .then(checkStatus)
         .then(parseJSON)
-        .then(() => onBack())
-        .catch((err) => {
-          logError(err);
+        .then(() => onBack(true))
+        .catch((e) => {
+          logError(e);
           setErr();
         });
-
-      // setAlert({
-      //   type: 'success',
-      //   message: success,
-      // });
     } else {
       setErr();
     }
@@ -124,7 +118,7 @@ const EarningsModal = (props) => {
         <ModalCta
           type="secondary"
           label="Back"
-          onClick={onBack}
+          onClick={() => onBack(false)}
         />
       </div>
     </div>

@@ -6,3 +6,12 @@
   @include safe-fixed-flex;
   background: linear-gradient(45deg, map-get($layout-gradient, 'right'), map-get($layout-gradient, 'left'));
 };
+
+.alertWrapper {
+  position: fixed;
+  top: 0;
+  z-index: $z-index-alert;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
