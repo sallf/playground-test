@@ -1,0 +1,14 @@
+@import '$scss/local';
+// --------------------- ===
+//  LOCAL VARS
+// ---------------------
+$table-row-count: 3;
+
+// --------------------- ===
+//  TABLE
+// ---------------------
+.body {
+  // Three rows high, but we only need 2 margins
+  height: ($table-row-height * $table-row-count) + ($table-row-margin * ($table-row-count - 1));
+  overflow: auto;
+}

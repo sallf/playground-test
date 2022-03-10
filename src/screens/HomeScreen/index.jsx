@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './index.scss';
-import { columnData } from './columnData';
 
 import { useMountEffect } from '$hooks/react';
 import {
@@ -12,9 +11,7 @@ import { buildRequest } from '$api/requestFactory';
 
 import { numberToUSD } from '$common/numbers';
 
-import TableWrapper from '$components/tables/TableWrapper';
-import Row from '$components/tables/Row';
-import Cell from '$components/tables/Cell';
+import EarningsTable from '$screens/HomeScreen/EarningsTable';
 
 const adjustEarningsData = (data) => (
   data.map((claim, i) => ({
@@ -59,33 +56,10 @@ const HomeScreen = () => {
   // ---------------------
   return (
     <div className={styles.wrapper}>
-      <TableWrapper
-        hasCta
-        columnData={columnData}
-      >
-        <div className={styles.body}>
-          {
-            earningsData.map((claim) => (
-              <Row
-                hasCta
-                onClick={() => setCurrentId(claim.id)}
-                key={claim.id}
-              >
-                {
-                  claim.orderedCells.map((cell, i) => (
-                    <Cell
-                      key={i} // eslint-disable-line react/no-array-index-key
-                      content={cell}
-                      size={columnData[i].size}
-                      textAlign={columnData[i].textAlign}
-                    />
-                  ))
-                }
-              </Row>
-            ))
-          }
-        </div>
-      </TableWrapper>
+      <EarningsTable
+        earningsData={earningsData}
+        onClick={(id) => setCurrentId(id)}
+      />
     </div>
   );
 };
