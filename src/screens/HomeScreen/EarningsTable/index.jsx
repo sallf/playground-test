@@ -39,6 +39,7 @@ const EarningsTable = (props) => {
                     content={cell}
                     size={columnData[i].size}
                     textAlign={columnData[i].textAlign}
+                    isLast={claim.orderedCells.length - 1 === i}
                   />
                 ))
               }

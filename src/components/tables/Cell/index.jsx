@@ -11,6 +11,7 @@ const Cell = (props) => {
     size,
     isHeader,
     textAlign,
+    isLast,
   } = props;
 
   // --------------------- ===
@@ -30,6 +31,11 @@ const Cell = (props) => {
       <span className={styles.span}>
         {content}
       </span>
+      {
+        !isLast && (
+          <div className={styles.divider} />
+        )
+      }
     </div>
   );
 };
@@ -53,6 +59,7 @@ Cell.propTypes = {
     'center',
     'right',
   ]),
+  isLast: PropTypes.bool.isRequired,
 };
 
 export default Cell;

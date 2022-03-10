@@ -32,6 +32,7 @@ const TableWrapper = (props) => {
                   size={cellData.size}
                   isHeader
                   textAlign={cellData.textAlign}
+                  isLast={columnData.length - 1 === i}
                 />
               ))
             }
