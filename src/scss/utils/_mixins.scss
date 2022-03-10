@@ -11,7 +11,21 @@
   left: 0;
   display: flex;
   & > * {
-    margin: auto;
+    margin: auto; // fix for sm screens with overflow
+  }
+}
+
+@mixin safe-fixed-flex {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  & > * {
+    margin: auto; // fix for sm screens with overflow
   }
 }
 

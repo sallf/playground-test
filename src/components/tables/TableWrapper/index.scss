@@ -2,7 +2,7 @@
 // --------------------- ===
 //  LOCAL VARS
 // ---------------------
-$table-br: $table-row-radius * 2;
+$table-br: map-get($radii, 'container');
 
 // --------------------- ===
 //  SCSS

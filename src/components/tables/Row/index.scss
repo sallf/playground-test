@@ -14,7 +14,7 @@ $scrollbar-offset: $scrollbar-width * 2;
   color: map-get($colors-text, 'white');
   font-size: $text-xs;
   background: map-get($table-colors, 'body');
-  border-radius: $table-row-radius;
+  border-radius: map-get($radii, 'inner');
 
   &__header {
     padding-left: $scrollbar-offset;

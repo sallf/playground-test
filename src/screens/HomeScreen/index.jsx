@@ -12,6 +12,8 @@ import { buildRequest } from '$api/requestFactory';
 import { numberToUSD } from '$common/numbers';
 
 import EarningsTable from '$screens/HomeScreen/EarningsTable';
+import Modal from '$components/modal/Modal';
+import EarningsModal from '$components/modal/content/EarningsModal';
 
 const adjustEarningsData = (data) => (
   data.map((claim, i) => ({
@@ -60,6 +62,11 @@ const HomeScreen = () => {
         earningsData={earningsData}
         onClick={(id) => setCurrentId(id)}
       />
+      <Modal
+        isVisible={!!currentId}
+      >
+        <EarningsModal />
+      </Modal>
     </div>
   );
 };

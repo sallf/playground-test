@@ -14,6 +14,7 @@
     "@loadable/component": "5.12.0",
     "config": "3.3.1",
     "es6-promise": "4.2.8",
+    "gsap": "^3.9.1",
     "isomorphic-fetch": "^3.0.0",
     "luxon": "1.25.0",
     "prop-types": "15.7.2",

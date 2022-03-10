@@ -36,6 +36,7 @@ $text-xs: .78rem;
 --------------------------- */
 $z-index-background: -1;
 $z-index-lift: 9;
+$z-index-modal: 19;
 
 // --------------------- ===
 //  BREAKPOINTS
@@ -51,8 +52,20 @@ $scrollbar-width: 5px;
 // --------------------- ===
 //  TABLES
 // ---------------------
-$table-row-radius: .5rem;
 $table-cta-space: 6rem;
 $table-end-padding: 1rem;
 $table-row-height: 3rem;
 $table-row-margin: .5rem;
+
+// --------------------- ===
+//  MODAL
+// ---------------------
+$modal-offset: 15px;
+
+// --------------------- ===
+//  RADII
+// ---------------------
+$radii: (
+  'container': 1rem,
+  'inner': .5rem,
+);

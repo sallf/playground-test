@@ -85,3 +85,8 @@ $scrollbar-colors: (
   'track': map-get($colors-dark, 'cherryPie'),
   'thumb': map-get($colors-dark, 'purpleHeart'),
 );
+
+$modal-colors: (
+  'background': linear-gradient(90deg, map-get($colors-dark, 'blueGem'), map-get($colors-dark, 'blueRock')),
+  'inset': map-get($colors-dark, 'cherryPie'),
+);
