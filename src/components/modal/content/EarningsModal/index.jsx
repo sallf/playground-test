@@ -6,6 +6,7 @@ import bitcoinImg from '$images/bitcoin-icon.png';
 
 import ModalTitle from '$components/typography/ModalTitle';
 import Input from '$components/forms/Input';
+import ModalCta from '$components/buttons/ModalCta';
 
 const EarningsModal = () => {
   // --------------------- ===
@@ -27,7 +28,17 @@ const EarningsModal = () => {
           isRequired
         />
       </div>
-      <div className={styles.section}>
+      <div>
+        <ModalCta
+          type="primary"
+          label="Claim"
+          onClick={() => {}}
+        />
+        <ModalCta
+          type="secondary"
+          label="Back"
+          onClick={() => {}}
+        />
       </div>
     </div>
   );
