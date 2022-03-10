@@ -8,6 +8,7 @@ const PrimaryCta = (props) => {
   // ---------------------
   const {
     label,
+    onClick,
   } = props;
 
   // --------------------- ===
@@ -17,6 +18,7 @@ const PrimaryCta = (props) => {
     <button
       type="button"
       className={styles.btn}
+      onClick={onClick}
     >
       {label}
     </button>
@@ -29,6 +31,7 @@ PrimaryCta.defaultProps = {
 
 PrimaryCta.propTypes = {
   label: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default PrimaryCta;

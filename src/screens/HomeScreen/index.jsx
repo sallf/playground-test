@@ -60,7 +60,7 @@ const HomeScreen = () => {
     <div className={styles.wrapper}>
       <EarningsTable
         earningsData={earningsData}
-        onClick={(id) => setCurrentId(id)}
+        onClick={setCurrentId}
       />
       <Modal
         isVisible={!!currentId}

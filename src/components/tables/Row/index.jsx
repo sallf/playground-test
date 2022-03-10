@@ -31,6 +31,7 @@ const Row = (props) => {
         hasCta && !isHeader && (
           <div className={styles.ctaWrapper}>
             <PrimaryCta
+              label="Claim"
               onClick={onClick}
             />
           </div>
