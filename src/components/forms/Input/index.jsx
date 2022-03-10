@@ -11,6 +11,8 @@ const Input = (props) => {
     label,
     name,
     type,
+    value,
+    onChange,
     isRequired,
   } = props;
 
@@ -34,6 +36,8 @@ const Input = (props) => {
           type={type}
           name={name}
           required={isRequired}
+          value={value}
+          onChange={onChange}
         />
       </label>
     </div>
@@ -49,6 +53,8 @@ Input.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
   isRequired: PropTypes.bool,
 };
 

@@ -67,6 +67,7 @@ const HomeScreen = () => {
       >
         <EarningsModal
           onBack={() => setCurrentId(null)}
+          id={currentId}
         />
       </Modal>
     </div>

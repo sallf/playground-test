@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import WAValidator from 'multicoin-address-validator';
 import styles from './index.scss';
 
 import bitcoinImg from '$images/bitcoin-icon.png';
@@ -13,8 +14,23 @@ const EarningsModal = (props) => {
   //  PROPS
   // ---------------------
   const {
+    id,
     onBack,
   } = props;
+
+  // --------------------- ===
+  //  STATE
+  // ---------------------
+  const [value, setValue] = useState('');
+
+  // --------------------- ===
+  //  HANDLERS
+  // ---------------------
+  const handleSubmit = (evt) => {
+    evt.preventDefault(); // stop enter from reloading page
+    const isValid = WAValidator.validate(value, 'eth');
+    console.log('issvv', isValid);
+  };
 
   // --------------------- ===
   //  RENDER
@@ -28,18 +44,24 @@ const EarningsModal = (props) => {
         <img src={bitcoinImg} className={styles.img} alt="" />
       </div>
       <div className={styles.section}>
-        <Input
-          label="Transfer To"
-          name="transferTo"
-          type="text"
-          isRequired
-        />
+        <form
+          onSubmit={handleSubmit}
+        >
+          <Input
+            label="Transfer To"
+            name="transferTo"
+            type="text"
+            value={value}
+            onChange={(evt) => setValue(evt.target.value)}
+            isRequired
+          />
+        </form>
       </div>
       <div>
         <ModalCta
           type="primary"
           label="Claim"
-          onClick={() => {}}
+          onClick={handleSubmit}
         />
         <ModalCta
           type="secondary"
@@ -52,10 +74,11 @@ const EarningsModal = (props) => {
 };
 
 EarningsModal.defaultProps = {
-
+  id: null,
 };
 
 EarningsModal.propTypes = {
+  id: PropTypes.number,
   onBack: PropTypes.func.isRequired,
 };
 
