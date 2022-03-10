@@ -29,9 +29,14 @@
   position: absolute;
   top: 50%;
   right: 0;
+  display: none;
   width: 1px;
   height: $table-row-height / 2;
   background: map-get($colors-translucent, 'white-10');
   border-radius: 10px;
   transform: translateY(-50%);
+
+  @include breakpoint-up {
+    display: block;
+  }
 }

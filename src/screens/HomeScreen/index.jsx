@@ -22,7 +22,7 @@ const adjustEarningsData = (data) => (
     orderedCells: [
       i % 2 === 1
         ? 'Some Activity'
-        : 'Some really really really long Activity',
+        : 'Some really really really long Activity', // random for variability
       claim.rewardToken,
       claim.unclaimedAmount,
       claim.totalClaimed,

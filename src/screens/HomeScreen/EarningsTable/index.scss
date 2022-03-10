@@ -2,18 +2,23 @@
 // --------------------- ===
 //  LOCAL VARS
 // ---------------------
-$table-row-count: 3;
+$table-row-count-sm: 5;
+$table-row-count-lg: 3;
 
 // --------------------- ===
 //  TABLE
 // ---------------------
 .body {
   // Three rows high, but we only need 2 margins
-  height: ($table-row-height * $table-row-count) + ($table-row-margin * ($table-row-count - 1));
+  height: ($table-row-height * $table-row-count-sm) + ($table-row-margin-sm * ($table-row-count-sm - 1));
   overflow: auto;
   direction: rtl; // gets the scrollbar on the left
 
   & > * {
     direction: ltr; // the resets all the content
+  }
+
+  @include breakpoint-up {
+    height: ($table-row-height * $table-row-count-lg) + ($table-row-margin-lg * ($table-row-count-lg - 1));
   }
 }

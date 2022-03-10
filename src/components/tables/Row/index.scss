@@ -9,12 +9,16 @@ $scrollbar-offset: $scrollbar-width * 2;
   display: flex;
   flex-direction: row;
   padding: 0 $table-end-padding;
-  margin-bottom: $table-row-margin;
+  margin-bottom: $table-row-margin-sm;
   margin-left: $scrollbar-offset;
   color: map-get($colors-text, 'white');
   font-size: $text-xs;
   background: map-get($table-colors, 'body');
   border-radius: map-get($radii, 'inner');
+
+  @include breakpoint-up {
+    margin-bottom: $table-row-margin-lg;
+  }
 
   &__header {
     padding-left: $scrollbar-offset;
@@ -24,22 +28,35 @@ $scrollbar-offset: $scrollbar-width * 2;
     text-transform: uppercase;
     background: map-get($table-colors, 'header');
 
+    @include breakpoint-down {
+      // This hides the content but keeps the context for screen readers
+      @include sr-only;
+    }
+
     &.row__cta {
       padding-left: calc(#{$table-cta-space} + #{$scrollbar-offset} + #{$scrollbar-width});
     }
   }
 
   &__cta {
-    padding-left: $table-cta-space;
+    @include breakpoint-up {
+      padding-left: $table-cta-space;
+    }
   }
 }
 
 .ctaWrapper {
   position: absolute;
-  top: 0;
   bottom: 0;
-  left: $table-end-padding;
+  left: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translate(-50%, 50%);
+
+  @include breakpoint-up {
+    top: 0;
+    left: $table-end-padding;
+    transform: translate(0);
+  }
 }
