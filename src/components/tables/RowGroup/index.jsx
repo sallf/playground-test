@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './index.scss';
 
 const RowGroup = (props) => {
   // --------------------- ===
@@ -13,7 +14,7 @@ const RowGroup = (props) => {
   //  RENDER
   // ---------------------
   return (
-    <div role="rowgroup">
+    <div className={styles.rowGroup} role="rowgroup">
       {children}
     </div>
   );

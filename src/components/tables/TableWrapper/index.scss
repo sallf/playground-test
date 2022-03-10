@@ -20,4 +20,5 @@ $table-br: $table-row-radius * 2;
   padding: 1.5rem;
   background: map-get($table-colors, 'inset');
   border-radius: $table-br;
+  overflow: auto;
 }

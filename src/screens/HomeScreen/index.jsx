@@ -63,26 +63,28 @@ const HomeScreen = () => {
         hasCta
         columnData={columnData}
       >
-        {
-          earningsData.map((claim) => (
-            <Row
-              hasCta
-              onClick={() => setCurrentId(claim.id)}
-              key={claim.id}
-            >
-              {
-                claim.orderedCells.map((cell, i) => (
-                  <Cell
-                    key={i} // eslint-disable-line react/no-array-index-key
-                    content={cell}
-                    size={columnData[i].size}
-                    textAlign={columnData[i].textAlign}
-                  />
-                ))
-              }
-            </Row>
-          ))
-        }
+        <div className={styles.body}>
+          {
+            earningsData.map((claim) => (
+              <Row
+                hasCta
+                onClick={() => setCurrentId(claim.id)}
+                key={claim.id}
+              >
+                {
+                  claim.orderedCells.map((cell, i) => (
+                    <Cell
+                      key={i} // eslint-disable-line react/no-array-index-key
+                      content={cell}
+                      size={columnData[i].size}
+                      textAlign={columnData[i].textAlign}
+                    />
+                  ))
+                }
+              </Row>
+            ))
+          }
+        </div>
       </TableWrapper>
     </div>
   );

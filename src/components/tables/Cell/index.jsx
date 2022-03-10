@@ -27,7 +27,7 @@ const Cell = (props) => {
       role={isHeader ? 'columnheader' : 'cell'}
       title={content} // easy tooltip for overflowing text
     >
-      <span>
+      <span className={styles.span}>
         {content}
       </span>
     </div>

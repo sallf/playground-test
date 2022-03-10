@@ -17,3 +17,8 @@
     margin: auto; // fix for sm screens with overflow
   }
 };
+
+.body {
+  height: ($table-row-height + $table-row-margin) * 3;
+  overflow: auto;
+}

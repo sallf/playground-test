@@ -20,8 +20,8 @@ const TableWrapper = (props) => {
   //  RENDER
   // ---------------------
   return (
-    <div className={styles.wrapper} role="table">
-      <div className={styles.inset}>
+    <div className={styles.wrapper}>
+      <div className={styles.inset} role="table">
         <RowGroup>
           <Row isHeader hasCta={hasCta}>
             {
