@@ -10,27 +10,49 @@ const Cell = (props) => {
     content,
     size,
     isHeader,
+    textAlign,
   } = props;
 
   // --------------------- ===
   //  RENDER
   // ---------------------
   return (
-    <span
-      className={`${styles.cell} ${isHeader ? styles.header : ''}`}
+    <div
+      className={`${styles.cell} ${isHeader ? styles.cell__header : ''}`}
+      style={{
+        flexGrow: size,
+        textAlign,
+        justifyContent: textAlign === 'left' ? 'flex-start' : 'flex-end', // this could be better
+      }}
       role={isHeader ? 'columnheader' : 'cell'}
+      title={content} // easy tooltip for overflowing text
     >
-      {content}
-    </span>
+      <span>
+        {content}
+      </span>
+    </div>
   );
 };
 
 Cell.defaultProps = {
-
+  content: '',
+  size: 1,
+  isHeader: false,
+  textAlign: 'right',
 };
 
 Cell.propTypes = {
-
+  content: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  size: PropTypes.number,
+  isHeader: PropTypes.bool,
+  textAlign: PropTypes.oneOf([
+    'left',
+    'center',
+    'right',
+  ]),
 };
 
 export default Cell;

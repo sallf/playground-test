@@ -30,6 +30,8 @@ const TableWrapper = (props) => {
                   key={i} // eslint-disable-line react/no-array-index-key
                   content={cellData.label}
                   size={cellData.size}
+                  isHeader
+                  textAlign={cellData.textAlign}
                 />
               ))
             }

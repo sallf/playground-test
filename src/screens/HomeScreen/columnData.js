@@ -1,30 +1,37 @@
 export const columnData = [
   {
     label: 'Your Earnings',
-    size: 2,
+    size: 4,
+    textAlign: 'left',
   },
   {
     label: 'Reward',
-    size: 1,
+    size: 3,
+    textAlign: 'right',
   },
   {
     label: 'Unclaimed',
-    size: 1,
+    size: 3,
+    textAlign: 'right',
   },
   {
     label: 'Total Claimed',
-    size: 1,
+    size: 3,
+    textAlign: 'right',
   },
   {
     label: 'XYZ Earned',
-    size: 1,
+    size: 3,
+    textAlign: 'right',
   },
   {
     label: 'Total (USD)',
-    size: 1,
+    size: 3,
+    textAlign: 'right',
   },
   {
     label: 'Weekly Rank',
-    size: 1,
+    size: 3,
+    textAlign: 'right',
   },
 ];

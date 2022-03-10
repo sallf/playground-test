@@ -76,6 +76,7 @@ const HomeScreen = () => {
                     key={i} // eslint-disable-line react/no-array-index-key
                     content={cell}
                     size={columnData[i].size}
+                    textAlign={columnData[i].textAlign}
                   />
                 ))
               }
