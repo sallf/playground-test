@@ -77,6 +77,7 @@ const EarningsModal = (props) => {
             type="text"
             value={value}
             onChange={(evt) => setValue(evt.target.value)}
+            status={alert ? alert.type : 'normal'}
             isRequired
           />
         </form>

@@ -40,4 +40,20 @@ $input-field-basic-background: map-get($colors-dark, 'blue');
     outline: none;
     box-shadow: none;
   }
+
+  &.normal {
+
+  }
+
+  &.error {
+    border-color: map-get($alert-colors, 'error');
+  }
+
+  &.success {
+    border-color: map-get($alert-colors, 'success');
+    // disabling a success state works for this form
+    // but probably isn't a long term solution
+    opacity: .5;
+    cursor: not-allowed;
+  }
 }

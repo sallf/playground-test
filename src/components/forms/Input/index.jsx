@@ -13,8 +13,11 @@ const Input = (props) => {
     type,
     value,
     onChange,
+    status,
     isRequired,
   } = props;
+
+  console.log('statt', status);
 
   // --------------------- ===
   //  RENDER
@@ -32,12 +35,13 @@ const Input = (props) => {
           {isRequired ? '*' : ''}
         </span>
         <input
-          className={styles.input}
+          className={`${styles.input} ${styles[status]}`}
           type={type}
           name={name}
           required={isRequired}
           value={value}
           onChange={onChange}
+          disabled={status === 'success'}
         />
       </label>
     </div>
@@ -55,6 +59,11 @@ Input.propTypes = {
   type: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  status: PropTypes.oneOf([
+    'normal',
+    'error',
+    'success',
+  ]).isRequired,
   isRequired: PropTypes.bool,
 };
 
