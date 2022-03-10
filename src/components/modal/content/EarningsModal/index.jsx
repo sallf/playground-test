@@ -4,6 +4,12 @@ import WAValidator from 'multicoin-address-validator';
 import styles from './index.scss';
 
 import bitcoinImg from '$images/bitcoin-icon.png';
+import { buildRequest } from '$api/requestFactory';
+import {
+  checkStatus,
+  logError,
+  parseJSON,
+} from '$api/fetchUtils';
 
 import ModalTitle from '$components/typography/ModalTitle';
 import Alert from '$components/typography/Alert';
@@ -31,20 +37,36 @@ const EarningsModal = (props) => {
   // --------------------- ===
   //  HANDLERS
   // ---------------------
+  const setErr = () => {
+    setAlert({
+      type: 'error',
+      message: err,
+    });
+  };
+
   const handleSubmit = (evt) => {
     evt.preventDefault(); // stop enter from reloading page
     const isValid = WAValidator.validate(value, 'eth');
     if (isValid) {
-      setAlert({
-        type: 'success',
-        message: success,
+      const request = buildRequest('submitClaim', {
+        claimId: id,
+        address: value,
       });
-      // api post
+      fetch(request)
+        .then(checkStatus)
+        .then(parseJSON)
+        .then(() => onBack())
+        .catch((err) => {
+          logError(err);
+          setErr();
+        });
+
+      // setAlert({
+      //   type: 'success',
+      //   message: success,
+      // });
     } else {
-      setAlert({
-        type: 'error',
-        message: err,
-      });
+      setErr();
     }
   };
 

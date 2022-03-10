@@ -17,7 +17,6 @@ const Input = (props) => {
     isRequired,
   } = props;
 
-  console.log('statt', status);
 
   // --------------------- ===
   //  RENDER
