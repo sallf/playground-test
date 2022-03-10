@@ -21,6 +21,8 @@ $colors-dark: (
   'cherryPie': #27064C,
   'purpleHeart': #751CC1,
   'seance': #651BAD,
+  'errorRed': #B50000,
+  'successGreen': #008040,
 );
 
 $colors-decoration: (
@@ -102,4 +104,9 @@ $scrollbar-colors: (
 $modal-colors: (
   'background': linear-gradient(90deg, map-get($colors-dark, 'seance'), map-get($colors-dark, 'blueIndigo')),
   'inset': map-get($colors-dark, 'blackRock'),
+);
+
+$alert-colors: (
+  'success': map-get($colors-dark, 'successGreen'),
+  'error': map-get($colors-dark, 'errorRed'),
 );

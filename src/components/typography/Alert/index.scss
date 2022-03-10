@@ -1,0 +1,18 @@
+@import '$scss/local';
+
+.wrapper {
+  display: inline-block;
+  padding: .2rem .5rem;
+  color: map-get($colors-text, 'white');
+  font-size: $text-sm;
+  background: map-get($alert-colors, 'success');
+  border-radius: .1rem;
+}
+
+.error {
+  background: map-get($alert-colors, 'error');
+}
+
+.success {
+  background: map-get($alert-colors, 'success');
+}

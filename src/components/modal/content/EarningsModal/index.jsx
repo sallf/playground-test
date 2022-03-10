@@ -6,8 +6,12 @@ import styles from './index.scss';
 import bitcoinImg from '$images/bitcoin-icon.png';
 
 import ModalTitle from '$components/typography/ModalTitle';
+import Alert from '$components/typography/Alert';
 import Input from '$components/forms/Input';
 import ModalCta from '$components/buttons/ModalCta';
+
+const err = 'This is not a valid ETH address. Please try again.';
+const success = 'Claim successfully submitted!';
 
 const EarningsModal = (props) => {
   // --------------------- ===
@@ -22,6 +26,7 @@ const EarningsModal = (props) => {
   //  STATE
   // ---------------------
   const [value, setValue] = useState('');
+  const [alert, setAlert] = useState(null);
 
   // --------------------- ===
   //  HANDLERS
@@ -29,7 +34,18 @@ const EarningsModal = (props) => {
   const handleSubmit = (evt) => {
     evt.preventDefault(); // stop enter from reloading page
     const isValid = WAValidator.validate(value, 'eth');
-    console.log('issvv', isValid);
+    if (isValid) {
+      setAlert({
+        type: 'success',
+        message: success,
+      });
+      // api post
+    } else {
+      setAlert({
+        type: 'error',
+        message: err,
+      });
+    }
   };
 
   // --------------------- ===
@@ -44,6 +60,14 @@ const EarningsModal = (props) => {
         <img src={bitcoinImg} className={styles.img} alt="" />
       </div>
       <div className={styles.section}>
+        {
+          alert && (
+            <Alert
+              type={alert.type}
+              message={alert.message}
+            />
+          )
+        }
         <form
           onSubmit={handleSubmit}
         >
