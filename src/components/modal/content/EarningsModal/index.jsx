@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import WAValidator from 'multicoin-address-validator';
 import styles from './index.scss';
@@ -47,6 +47,15 @@ const EarningsModal = (props) => {
       });
     }
   };
+
+  // --------------------- ===
+  //  EFFECTS
+  // ---------------------
+  useEffect(() => {
+    // rest form when id changes
+    setValue('');
+    setAlert(null);
+  }, [id]);
 
   // --------------------- ===
   //  RENDER

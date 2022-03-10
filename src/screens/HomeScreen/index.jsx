@@ -66,7 +66,6 @@ const HomeScreen = () => {
         isVisible={!!currentId}
       >
         <EarningsModal
-          key={currentId} // cheap way to reset the form
           onBack={() => setCurrentId(null)}
           id={currentId}
         />
