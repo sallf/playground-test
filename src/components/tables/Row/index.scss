@@ -1,0 +1,15 @@
+@import '$scss/local';
+
+.row {
+  display: flex;
+  flex-direction: row;
+  color: map-get($colors-text, 'white');
+  background: map-get($table-colors, 'body');
+  border-radius: $table-row-radius;
+
+  &__header {
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    background: map-get($table-colors, 'header');
+  }
+}

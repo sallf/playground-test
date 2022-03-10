@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './index.scss';
-import { tableHeaders } from './tableHeaders';
+import { columnData } from './columnData';
 
 import { useMountEffect } from '$hooks/react';
 import {
@@ -9,13 +9,35 @@ import {
   parseJSON,
 } from '$api/fetchUtils';
 import { buildRequest } from '$api/requestFactory';
-import TableBuilder from '$components/tables/TableBuilder';
+
+import { numberToUSD } from '$common/numbers';
+
+import TableWrapper from '$components/tables/TableWrapper';
+import Row from '$components/tables/Row';
+import Cell from '$components/tables/Cell';
+
+const adjustEarningsData = (data) => (
+  data.map((claim, i) => ({
+    id: claim.claimId,
+    orderedCells: [
+      i % 2 === 1
+        ? 'Some Activity'
+        : 'Some really really really long Activity',
+      claim.rewardToken,
+      claim.unclaimedAmount,
+      claim.totalClaimed,
+      claim.rewardTokenEarned,
+      numberToUSD(claim.usdTotal),
+      claim.weeklyRank,
+    ],
+  }))
+);
 
 const HomeScreen = () => {
   // --------------------- ===
   //  STATE
   // ---------------------
-  const [isModal, setIsModal] = useState(false);
+  const [currentId, setCurrentId] = useState(null);
   const [earningsData, setEarningsData] = useState([]);
 
   // --------------------- ===
@@ -33,12 +55,34 @@ const HomeScreen = () => {
   // --------------------- ===
   //  RENDER
   // ---------------------
+  const adjustedEarningsData = adjustEarningsData(earningsData);
+
   return (
     <div className={styles.wrapper}>
-      <TableBuilder
-        headers={tableHeaders}
-        body={earningsData}
-      />
+      <TableWrapper
+        hasCta
+        columnData={columnData}
+      >
+        {
+          adjustedEarningsData.map((claim) => (
+            <Row
+              hasCta
+              onClick={() => setCurrentId(claim.id)}
+              key={claim.id}
+            >
+              {
+                claim.orderedCells.map((cell, i) => (
+                  <Cell
+                    key={i} // eslint-disable-line react/no-array-index-key
+                    content={cell}
+                    size={columnData[i].size}
+                  />
+                ))
+              }
+            </Row>
+          ))
+        }
+      </TableWrapper>
     </div>
   );
 };

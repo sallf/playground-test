@@ -70,4 +70,10 @@ $table-colors: (
   'background': linear-gradient(45deg, map-get($colors-dark, 'indigo'), map-get($colors-dark, 'blueRock')),
   'inset': map-get($colors-dark, 'blackRock'),
   'header': map-get($colors-dark, 'indigo'),
+  'body': map-get($colors-dark, 'indigo'),
+);
+
+$primary-btn-colors: (
+  'bg': map-get($colors-dark, 'mint'),
+  'text': map-get($colors-text, 'white'),
 );

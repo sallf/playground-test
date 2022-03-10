@@ -1,0 +1,7 @@
+@import '$scss/local';
+
+.btn {
+  padding: 1rem 1.5rem;
+  color: map-get($primary-btn-colors, 'text');
+  background: map-get($primary-btn-colors, 'bg');
+}
