@@ -1,0 +1,43 @@
+@import '$scss/local';
+/* --------------------- ===
+  FORMS
+--------------------------- */
+$label-line-height: 20px;
+$input-field-basic-element: map-get($colors-text, 'white');
+$input-field-basic-background: map-get($colors-dark, 'blue');
+
+/* --------------------- ===
+  INPUT
+--------------------------- */
+.group {
+  margin-bottom: 25px;
+}
+
+.label {
+  position: relative;
+  display: block;
+}
+
+.labelText {
+  font-size: $text-sm;
+  font-style: italic;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  max-width: 15rem;
+  padding: 5px 8px;
+  margin: 0 auto;
+  color: $input-field-basic-element;
+  font-size: $text-sm;
+  line-height: 1.5;
+  background: map-get($colors-translucent, 'white-05');
+  border: 1px solid map-get($colors-translucent, 'white-05');
+  border-radius: map-get($radii, 'inner');
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}

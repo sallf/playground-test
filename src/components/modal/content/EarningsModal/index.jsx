@@ -5,6 +5,7 @@ import styles from './index.scss';
 import bitcoinImg from '$images/bitcoin-icon.png';
 
 import ModalTitle from '$components/typography/ModalTitle';
+import Input from '$components/forms/Input';
 
 const EarningsModal = () => {
   // --------------------- ===
@@ -12,9 +13,21 @@ const EarningsModal = () => {
   // ---------------------
   return (
     <div>
-      <ModalTitle>Claim</ModalTitle>
-      <div className={styles.imgWrapper}>
+      <div className={styles.section}>
+        <ModalTitle>Claim</ModalTitle>
+      </div>
+      <div className={styles.section}>
         <img src={bitcoinImg} className={styles.img} alt="" />
+      </div>
+      <div className={styles.section}>
+        <Input
+          label="Transfer To"
+          name="transferTo"
+          type="text"
+          isRequired
+        />
+      </div>
+      <div className={styles.section}>
       </div>
     </div>
   );

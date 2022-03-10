@@ -29,6 +29,7 @@
 .inset {
   width: 100%;
   height: 100%;
+  padding: 10px;
   color: map-get($colors-text, 'white');
   background: map-get($modal-colors, 'inset');
   border-radius: map-get($radii, 'container');
