@@ -1,0 +1,9 @@
+@import '$scss/local';
+
+.title {
+  font-size: $text-sm;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  opacity: .7;
+}
