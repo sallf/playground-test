@@ -48,15 +48,15 @@ const HomeScreen = () => {
     fetch(request)
       .then(checkStatus)
       .then(parseJSON)
-      .then((res) => setEarningsData(res))
+      .then((res) => setEarningsData(
+        adjustEarningsData(res),
+      ))
       .catch(logError);
   });
 
   // --------------------- ===
   //  RENDER
   // ---------------------
-  const adjustedEarningsData = adjustEarningsData(earningsData);
-
   return (
     <div className={styles.wrapper}>
       <TableWrapper
@@ -64,7 +64,7 @@ const HomeScreen = () => {
         columnData={columnData}
       >
         {
-          adjustedEarningsData.map((claim) => (
+          earningsData.map((claim) => (
             <Row
               hasCta
               onClick={() => setCurrentId(claim.id)}

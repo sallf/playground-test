@@ -36,11 +36,12 @@ const Row = (props) => {
 };
 
 Row.defaultProps = {
+  isHeader: false,
   onClick: () => {},
 };
 
 Row.propTypes = {
-  isHeader: PropTypes.bool.isRequired,
+  isHeader: PropTypes.bool,
   hasCta: PropTypes.bool.isRequired,
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
