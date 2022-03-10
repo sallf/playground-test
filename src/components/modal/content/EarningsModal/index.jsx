@@ -53,8 +53,10 @@ const EarningsModal = (props) => {
   // ---------------------
   useEffect(() => {
     // rest form when id changes
-    setValue('');
-    setAlert(null);
+    if (id > 0) {
+      setValue('');
+      setAlert(null);
+    }
   }, [id]);
 
   // --------------------- ===
