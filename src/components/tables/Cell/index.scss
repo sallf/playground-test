@@ -5,15 +5,15 @@
   flex: 1 0 0;
   align-items: center;
   min-height: $table-row-height;
-  /* text-overflow: ellipsis;
-  white-space: nowrap; */
   overflow: hidden;
 
   &__header {
-    /* display: flex;
-    align-items: center; */
     justify-content: flex-end;
     white-space: normal;
+
+    .span {
+      white-space: normal;
+    }
   }
 }
 
