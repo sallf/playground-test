@@ -65,7 +65,9 @@ const HomeScreen = () => {
       <Modal
         isVisible={!!currentId}
       >
-        <EarningsModal />
+        <EarningsModal
+          onBack={() => setCurrentId(null)}
+        />
       </Modal>
     </div>
   );

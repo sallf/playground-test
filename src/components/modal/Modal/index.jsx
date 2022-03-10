@@ -38,7 +38,8 @@ const Modal = (props) => {
       })
       .to(modalContentRef.current, {
         duration,
-        y: '50px',
+        y: '30px',
+        opacity: 0,
       }, 'start');
 
     // Set init position

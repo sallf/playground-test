@@ -8,7 +8,14 @@ import ModalTitle from '$components/typography/ModalTitle';
 import Input from '$components/forms/Input';
 import ModalCta from '$components/buttons/ModalCta';
 
-const EarningsModal = () => {
+const EarningsModal = (props) => {
+  // --------------------- ===
+  //  PROPS
+  // ---------------------
+  const {
+    onBack,
+  } = props;
+
   // --------------------- ===
   //  RENDER
   // ---------------------
@@ -37,7 +44,7 @@ const EarningsModal = () => {
         <ModalCta
           type="secondary"
           label="Back"
-          onClick={() => {}}
+          onClick={onBack}
         />
       </div>
     </div>
@@ -49,7 +56,7 @@ EarningsModal.defaultProps = {
 };
 
 EarningsModal.propTypes = {
-
+  onBack: PropTypes.func.isRequired,
 };
 
 export default EarningsModal;

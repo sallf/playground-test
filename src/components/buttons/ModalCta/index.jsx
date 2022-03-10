@@ -9,6 +9,7 @@ const ModalCta = (props) => {
   const {
     type,
     label,
+    onClick,
   } = props;
 
   // --------------------- ===
@@ -21,6 +22,7 @@ const ModalCta = (props) => {
         ${styles.btn}
         ${type === 'secondary' ? styles.btn__secondary : ''}
       `}
+      onClick={onClick}
     >
       {label}
     </button>
@@ -38,6 +40,7 @@ ModalCta.propTypes = {
     'secondary',
   ]),
   label: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ModalCta;
