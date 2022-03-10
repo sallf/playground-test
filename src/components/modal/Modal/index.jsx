@@ -33,7 +33,7 @@ const Modal = (props) => {
       .add('start')
       .to(modalRef.current, {
         duration,
-        backgroundColor: 'rgba(0, 0, 0, 0)', // convert to scssVar
+        backgroundColor: 'rgba(0, 0, 0, 0)',
         display: 'none',
       })
       .to(modalContentRef.current, {

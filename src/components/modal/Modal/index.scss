@@ -3,7 +3,7 @@
 .modal {
   @include safe-fixed-flex;
   z-index: $z-index-modal;
-  background: map-get($colors-translucent, 'black-60');
+  background: map-get($colors-translucent, 'black-70');
 }
 
 .outerSpacer {
