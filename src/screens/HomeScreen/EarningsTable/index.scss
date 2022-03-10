@@ -11,4 +11,9 @@ $table-row-count: 3;
   // Three rows high, but we only need 2 margins
   height: ($table-row-height * $table-row-count) + ($table-row-margin * ($table-row-count - 1));
   overflow: auto;
+  direction: rtl; // gets the scrollbar on the left
+
+  & > * {
+    direction: ltr; // the resets all the content
+  }
 }

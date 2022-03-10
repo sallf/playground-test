@@ -16,3 +16,24 @@ img {
   width: 100%;
   max-width: 100%;
 }
+
+::-webkit-scrollbar {
+  width: $scrollbar-width;
+}
+// Track
+::-webkit-scrollbar-track {
+  background: map-get($scrollbar-colors, 'track');
+}
+// Handle
+::-webkit-scrollbar-thumb {
+  background: map-get($scrollbar-colors, 'thumb');
+  border-radius: 1px;
+}
+// Handle on hover
+::-webkit-scrollbar-thumb:hover {
+  background: map-get($scrollbar-colors, 'thumb');
+}
+// Intersection corner
+::-webkit-scrollbar-corner {
+  background: thumb;
+}

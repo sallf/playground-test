@@ -18,6 +18,7 @@ $colors-dark: (
   'blueRock': #39048B,
   'blueGem': #5D13AC,
   'cherryPie': #27064C,
+  'purpleHeart': #751CC1,
 );
 
 $colors-decoration: (
@@ -78,4 +79,9 @@ $table-colors: (
 $primary-btn-colors: (
   'bg': map-get($colors-dark, 'mint'),
   'text': map-get($colors-text, 'white'),
+);
+
+$scrollbar-colors: (
+  'track': map-get($colors-dark, 'cherryPie'),
+  'thumb': map-get($colors-dark, 'purpleHeart'),
 );
