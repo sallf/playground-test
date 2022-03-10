@@ -28,7 +28,7 @@ $text-xl: 2rem;
 $text-lg: 1.5rem;
 $text-md: $base-font-size;
 $text-sm: .833rem;
-$text-xs: .7rem;
+$text-xs: .78rem;
 
 /* --------------------- ===
   Z-INDEX
@@ -46,3 +46,5 @@ $sm-breakpoint-max: $sm-breakpoint-min + 1;
 //  TABLES
 // ---------------------
 $table-row-radius: .5rem;
+$table-cta-space: 6rem;
+$table-end-padding: 1rem;

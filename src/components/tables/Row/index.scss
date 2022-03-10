@@ -1,15 +1,34 @@
 @import '$scss/local';
 
 .row {
+  position: relative;
   display: flex;
   flex-direction: row;
+  padding: 0 $table-end-padding;
+  margin-bottom: .5rem;
   color: map-get($colors-text, 'white');
+  font-size: $text-xs;
   background: map-get($table-colors, 'body');
   border-radius: $table-row-radius;
 
   &__header {
+    font-size: $text-sm;
     font-weight: $font-weight-bold;
     text-transform: uppercase;
     background: map-get($table-colors, 'header');
   }
+
+  &__cta {
+    padding-left: $table-cta-space;
+  }
+}
+
+.ctaWrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: $table-end-padding;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

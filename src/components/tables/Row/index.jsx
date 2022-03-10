@@ -20,14 +20,20 @@ const Row = (props) => {
   // ---------------------
   return (
     <div
-      className={`${styles.row} ${isHeader ? styles.row__header : ''}`}
+      className={`
+        ${styles.row}
+        ${isHeader ? styles.row__header : ''}
+        ${hasCta ? styles.row__cta : ''}
+      `}
       role="row"
     >
       {
         hasCta && !isHeader && (
-          <PrimaryCta
-            onClick={onClick}
-          />
+          <div className={styles.ctaWrapper}>
+            <PrimaryCta
+              onClick={onClick}
+            />
+          </div>
         )
       }
       {children}
