@@ -76,6 +76,13 @@ const HomeScreen = () => {
     setShowSuccess(true);
   };
 
+  const handleClose = (wasSuccess = false) => {
+    setCurrentId(null);
+    if (wasSuccess) {
+      handleSuccess();
+    }
+  };
+
   // --------------------- ===
   //  RENDER
   // ---------------------
@@ -96,15 +103,11 @@ const HomeScreen = () => {
         onClick={setCurrentId}
       />
       <Modal
+        onClose={handleClose}
         isVisible={!!currentId}
       >
         <EarningsModal
-          onBack={(wasSuccess = false) => {
-            setCurrentId(null);
-            if (wasSuccess) {
-              handleSuccess();
-            }
-          }}
+          onBack={(wasSuccess = false) => handleClose(wasSuccess)}
           id={currentId}
         />
       </Modal>

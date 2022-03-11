@@ -12,6 +12,7 @@ const Modal = (props) => {
   //  PROPS
   // ---------------------
   const {
+    onClose,
     isVisible,
     children,
   } = props;
@@ -51,10 +52,26 @@ const Modal = (props) => {
   };
 
   // --------------------- ===
+  //  HANDLERS
+  // ---------------------
+  const handleClickOutside = (evt) => {
+    if (!modalContentRef.current.contains(evt.target)) {
+      onClose();
+    }
+  };
+
+  // --------------------- ===
   //  EFFECTS
   // ---------------------
   useMountEffect(() => {
     buildAnimation(isVisible);
+  });
+
+  useMountEffect(() => {
+    document.addEventListener('pointerdown', handleClickOutside);
+    return () => {
+      document.removeEventListener('pointerdown', handleClickOutside);
+    };
   });
 
   useEffect(() => {
@@ -86,6 +103,7 @@ Modal.defaultProps = {
 };
 
 Modal.propTypes = {
+  onClose: PropTypes.func.isRequired,
   children: PropTypes.node,
   isVisible: PropTypes.bool.isRequired,
 };
