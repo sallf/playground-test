@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './index.scss';
 
@@ -15,6 +15,11 @@ const Row = (props) => {
     onClick,
     children,
   } = props;
+
+  // --------------------- ===
+  //  STATE
+  // ---------------------
+  const [isDown, setIsDown] = useState(false);
 
   // --------------------- ===
   //  RENDER
@@ -40,11 +45,16 @@ const Row = (props) => {
       }
       <div className={styles.dropdownWrapper}>
         <DropdownBtn
-          isDown={false}
-          onClick={() => {}}
+          isDown={isDown}
+          onClick={() => setIsDown((prev) => !prev)}
         />
       </div>
-      <div className={styles.innerCrop}>
+      <div
+        className={`
+          ${styles.innerCrop}
+          ${isDown ? styles.innerCrop__isDown : ''}
+        `}
+      >
         {children}
       </div>
     </div>
