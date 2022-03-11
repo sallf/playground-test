@@ -37,6 +37,7 @@ const EarningsTable = (props) => {
                   <Cell
                     key={i} // eslint-disable-line react/no-array-index-key
                     content={cell}
+                    label={columnData[i].label}
                     size={columnData[i].size}
                     textAlign={columnData[i].textAlign}
                     isFirst={i === 0} // mvp. probably want config over convention here

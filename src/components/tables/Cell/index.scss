@@ -32,6 +32,17 @@
   }
 }
 
+.label {
+  display: block;
+  font-size: $text-xs;
+  text-transform: uppercase;
+  opacity: .4;
+
+  @include breakpoint-up {
+    @include sr-only; // would want to test if this is causing a double label on a screen reader
+  }
+}
+
 .span {
   text-overflow: ellipsis;
   white-space: nowrap;

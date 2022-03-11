@@ -90,7 +90,7 @@ $scrollbar-offset: $scrollbar-width * 2;
   align-items: center;
   width: $dropdown-space;
   height: $table-row-height-sm;
-  padding: 0 $table-end-padding;
+  padding: 0 $table-end-padding 0 $table-end-padding / 2;
 
   @include breakpoint-up {
     display: none;

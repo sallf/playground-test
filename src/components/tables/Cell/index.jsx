@@ -8,6 +8,7 @@ const Cell = (props) => {
   // ---------------------
   const {
     content,
+    label,
     size,
     isHeader,
     textAlign,
@@ -33,7 +34,15 @@ const Cell = (props) => {
       role={isHeader ? 'columnheader' : 'cell'}
       title={content} // easy tooltip for overflowing text
     >
+
       <span className={styles.span}>
+        {
+          label && !isFirst && (
+            <span className={styles.label}>
+              {label}
+            </span>
+          )
+        }
         {content}
       </span>
       {
@@ -47,6 +56,7 @@ const Cell = (props) => {
 
 Cell.defaultProps = {
   content: '',
+  label: '',
   size: 1,
   isHeader: false,
   textAlign: 'right',
@@ -57,6 +67,7 @@ Cell.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]),
+  label: PropTypes.string,
   size: PropTypes.number,
   isHeader: PropTypes.bool,
   textAlign: PropTypes.oneOf([
