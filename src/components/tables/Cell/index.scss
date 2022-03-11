@@ -17,6 +17,15 @@
       white-space: normal;
     }
   }
+
+  @include breakpoint-down {
+    flex-basis: 50%;
+    flex-grow: 1 !important;
+
+    &__first {
+      font-weight: $font-weight-bold;
+    }
+  }
 }
 
 .span {

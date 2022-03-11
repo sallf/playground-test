@@ -37,7 +37,9 @@ const Row = (props) => {
           </div>
         )
       }
-      {children}
+      <div className={styles.innerCrop}>
+        {children}
+      </div>
     </div>
   );
 };

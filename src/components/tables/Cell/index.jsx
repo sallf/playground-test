@@ -11,6 +11,7 @@ const Cell = (props) => {
     size,
     isHeader,
     textAlign,
+    isFirst,
     isLast,
   } = props;
 
@@ -19,7 +20,11 @@ const Cell = (props) => {
   // ---------------------
   return (
     <div
-      className={`${styles.cell} ${isHeader ? styles.cell__header : ''}`}
+      className={`
+        ${styles.cell}
+        ${isHeader ? styles.cell__header : ''}
+        ${isFirst ? styles.cell__first : ''}
+      `}
       style={{
         flexGrow: size,
         textAlign,
@@ -59,6 +64,7 @@ Cell.propTypes = {
     'center',
     'right',
   ]),
+  isFirst: PropTypes.bool.isRequired,
   isLast: PropTypes.bool.isRequired,
 };
 

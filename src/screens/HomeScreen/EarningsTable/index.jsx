@@ -39,6 +39,7 @@ const EarningsTable = (props) => {
                     content={cell}
                     size={columnData[i].size}
                     textAlign={columnData[i].textAlign}
+                    isFirst={i === 0} // mvp. probably want config over convention here
                     isLast={claim.orderedCells.length - 1 === i}
                   />
                 ))
