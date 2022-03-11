@@ -10,7 +10,7 @@ $table-row-count-lg: 3;
 // ---------------------
 .body {
   // Three rows high, but we only need 2 margins
-  height: ($table-row-height * $table-row-count-sm) + ($table-row-margin-sm * ($table-row-count-sm - 1));
+  height: ($table-row-height-sm * $table-row-count-sm) + ($table-row-margin-sm * ($table-row-count-sm - 1));
   overflow: auto;
   direction: rtl; // gets the scrollbar on the left
 
@@ -19,6 +19,6 @@ $table-row-count-lg: 3;
   }
 
   @include breakpoint-up {
-    height: ($table-row-height * $table-row-count-lg) + ($table-row-margin-lg * ($table-row-count-lg - 1));
+    height: ($table-row-height-lg * $table-row-count-lg) + ($table-row-margin-lg * ($table-row-count-lg - 1));
   }
 }

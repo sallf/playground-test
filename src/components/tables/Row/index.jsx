@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './index.scss';
 
 import PrimaryCta from '$components/buttons/PrimaryCta';
+import DropdownBtn from '$components/buttons/DropdownBtn';
 
 const Row = (props) => {
   // --------------------- ===
@@ -37,6 +38,12 @@ const Row = (props) => {
           </div>
         )
       }
+      <div className={styles.dropdownWrapper}>
+        <DropdownBtn
+          isDown={false}
+          onClick={() => {}}
+        />
+      </div>
       <div className={styles.innerCrop}>
         {children}
       </div>

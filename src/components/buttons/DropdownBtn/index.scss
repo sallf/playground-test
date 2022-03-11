@@ -1,0 +1,15 @@
+@import '$scss/local';
+
+.btn {
+  width: 100%; // needs to be sized by a parent
+
+  svg {
+    width: 100%;
+    opacity: .4;
+    fill: map-get($colors-text, 'white');
+  }
+}
+
+.sr {
+  @include sr-only;
+}

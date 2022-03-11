@@ -7,6 +7,7 @@ $scrollbar-offset: $scrollbar-width * 2;
 .row {
   position: relative;
   padding: 0 $table-end-padding;
+  padding-right: $dropdown-space;
   margin-bottom: $table-row-margin-sm;
   margin-left: $scrollbar-offset;
   color: map-get($colors-text, 'white');
@@ -15,8 +16,7 @@ $scrollbar-offset: $scrollbar-width * 2;
   border-radius: map-get($radii, 'inner');
 
   @include breakpoint-up {
-    flex-wrap: nowrap;
-    height: auto;
+    padding-right: $table-end-padding;
     margin-bottom: $table-row-margin-lg;
   }
 
@@ -49,8 +49,14 @@ $scrollbar-offset: $scrollbar-width * 2;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: $table-row-height;
+  height: $table-row-height-sm;
   overflow: hidden;
+
+  @include breakpoint-up {
+    flex-wrap: nowrap;
+    height: auto;
+    height: $table-row-height-lg;
+  }
 }
 
 .ctaWrapper {
@@ -67,5 +73,21 @@ $scrollbar-offset: $scrollbar-width * 2;
     top: 0;
     left: $table-end-padding;
     transform: translate(0);
+  }
+}
+
+.dropdownWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: $z-index-lift;
+  display: flex;
+  align-items: center;
+  width: $dropdown-space;
+  height: $table-row-height-sm;
+  padding: 0 $table-end-padding;
+
+  @include breakpoint-up {
+    display: none;
   }
 }
