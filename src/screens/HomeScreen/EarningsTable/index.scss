@@ -1,0 +1,24 @@
+@import '$scss/local';
+// --------------------- ===
+//  LOCAL VARS
+// ---------------------
+$table-row-count-sm: 4;
+$table-row-count-lg: 3;
+
+// --------------------- ===
+//  TABLE
+// ---------------------
+.body {
+  // Three rows high, but we only need 2 margins
+  height: calc(min(#{($table-row-height-sm * $table-row-count-sm) + ($table-row-margin-sm * ($table-row-count-sm - 1))}, 80vh));
+  overflow: auto;
+  direction: rtl; // gets the scrollbar on the left
+
+  & > * {
+    direction: ltr; // the resets all the content
+  }
+
+  @include breakpoint-up {
+    height: ($table-row-height-lg * $table-row-count-lg) + ($table-row-margin-lg * ($table-row-count-lg - 1));
+  }
+}

@@ -1,0 +1,19 @@
+@import '$scss/local';
+
+.btn {
+  display: block;
+  width: 100%;
+  max-width: 12rem;
+  padding: .45rem 1rem;
+  margin: 0 auto .45rem;
+  color: map-get($modal-primary-btn-colors, 'text');
+  font-size: $text-xs;
+  font-style: italic;
+  background: map-get($modal-primary-btn-colors, 'bg');
+  border-radius: .45rem;
+
+  &__secondary {
+    color: map-get($modal-secondary-btn-colors, 'text');
+    background: map-get($modal-secondary-btn-colors, 'bg');
+  }
+}

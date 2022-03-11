@@ -1,49 +1,48 @@
-# React Starter Template
-## Technologies
-This template is a quick start into
+# Playground Test
+## Getting Started
+`git clone https://github.com/sallf/playground-test.git`
+
+`cd playground-test`
+
+`npm start`
+
+Don't forget to get the server up and running and make sure it's available at `http://localhost:3000/`.
 
 ## Architecture
 ```
 src
 │ __mocks__ (jest)
 │ __tests__ (jest)
+| api (functions for api calls)
 | App (root react component)
 | assets (images and other assets)
   |_ public (assets that shouldn't be hash named)
 | common (shared functions and objects)
 | components (all react components that are not tied to a route)
 | hooks (all react components that are not tied to a route)
-| route (route config)
 | screens (all react components that are tied to a route)
 | scss (all scss style - container of local.scss and global.scss)
 | index.ejs (root index html file)
 | index.jsx (root index js file - loads App)
 ```
 
-## Testing
-There are 2 type of tests that are currently supported, being unit testing and integration testing.
+## Technologies
 
-### Unit Testing
-[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) is used to write and run unit tests.
+Most of the HTML and CSS was custom written to fit the specs and because I didn't want to  use too many packages. I did rely on:
 
-* Run `npm test` to run the testing workflow.
-* The test files are located in the `src/__tests__` folder and they follow they should follow the same folder structure as the components they are targeting.
-* The test files should be in the format `<name>.test.{js|jsx}`
-* [@testing-library/jest-dom](https://www.npmjs.com/package/@testing-library/jest-dom) is used to extend jest's matchers to simplify the checking of an elements attributtes in order to target a specific elemen during the testing process.
+- [GSAP](https://greensock.com/) for animation help.
+- [multicoin-address-validator](https://www.npmjs.com/package/multicoin-address-validator) to help validate the input.
 
-### Intergration Testing
-[Cypress](https://www.cypress.io/) is the test automation tool that is used for integration tests and below is the workflow of getting started.
+## Notes
 
-* Run `npm run cy:e2e` to run the test specs. Cypress runs on a separate `Electron powered` application and will open as its own application. The command starts a dev-server on port `8080` and then runs `cypress` command as defined in the `package.json`.
+The table was built with `flexbox` and relies on a config file, `columnData`, to keep the columns aligned. HTML `table`s, while still used for tabular data, are challenging to make responsive. This approach allows us to use a single layout, and simply make CSS adjustments, to switch between the large and small screen versions. These layouts would not be possible with a single HTML `table`. Relying solely on CSS to track the breakpoint also keeps us from having to have extra eventListeners and track the screen width in React. I ultimately think this approach is cleaner and easier to maintain.
 
-Note: running it for the first time might not open up immediately due to the completion of the setup process. Hence, if that occurs, the above command has to be re-run.
+The instructions requested that the `getName` field always be visible on the small screen layout. I assumed that was the missing filed that I filled in with "Some Activity". The small screen layout maintains the original order of the cells. This could be adjusted with the `order` property if it needed to be adjusted.
 
-Also, ensure the port 8080 is not in use to run the tests.
+A few things I would have included in a larger project:
 
-* If you want to change the port address for running the tests, change the port in the `baseUrl` located in the file `cypress/cypress.json` to the port of your choice.
-
-* To run a specific test, navigate to the window that Cypress has opened and click on the `spec file` of interest. Cypress will then open up a Browser instance that will then run the tests.
-
-* In case you want to open all the tests files under cypress and manually run individual tests use the command `npm run cy:open`.
-
-* Currently the integration tests are not part of our CI/CD workflow and hence should be run manually.
+1. Instead of importing a modal into the components that need it, a single primary modal loaded in the root `App` component is better practice so you don't have to worry about modals over modals. Easy to control it with `context` or `redux`.
+2. A lot of the colors were very similar and it would be pretty easy to clean up 25%-50% of them to help simplify things.
+3. Add a loading state to the table to cut down on the layout shift that would be  with a slower API.
+4. Process error messages from the API.
+5. Build a custom animation with GSAP for the expand animation on small screens. The current implementation is a hack and could fail in some extreme situations.

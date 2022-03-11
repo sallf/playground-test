@@ -1,0 +1,22 @@
+@import '$scss/local';
+
+.btn {
+  width: 100%; // needs to be sized by a parent
+
+  &__isDown {
+    svg {
+      transform: scaleY(-1);
+    }
+  }
+
+  svg {
+    width: 100%;
+    opacity: .4;
+    fill: map-get($colors-text, 'white');
+    transition: .32s transform;
+  }
+}
+
+.sr {
+  @include sr-only;
+}

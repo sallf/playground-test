@@ -4,12 +4,12 @@ const path = require('path');
 module.exports = {
   resolve: {
     alias: {
+      $api: path.resolve(__dirname, 'src/api/'),
       $common: path.resolve(__dirname, 'src/common/'),
       $components: path.resolve(__dirname, 'src/components/'),
       $hooks: path.resolve(__dirname, 'src/hooks/'),
       $images: path.resolve(__dirname, 'src/assets/images/'),
       $models: path.resolve(__dirname, 'src/models/'),
-      $route: path.resolve(__dirname, 'src/route/'),
       $screens: path.resolve(__dirname, 'src/screens/'),
       $scss: path.resolve(__dirname, 'src/scss/'),
     },

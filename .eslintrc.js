@@ -1,7 +1,6 @@
 module.exports = {
   extends: [
     'airbnb',
-    'plugin:cypress/recommended',
   ],
   parser: 'babel-eslint',
   env: {
@@ -25,10 +24,10 @@ module.exports = {
     }
   },
   rules: {
-    'arrow-body-style': 'off',
     'semi': 'error',
     'max-len': ['warn', 120],
     'class-methods-use-this': 'off',
+    'import/prefer-default-export': 'off',
     'react/button-has-type': 'off',
     'react/destructuring-assignment': 'off',
     'react/prefer-stateless-function': 'off',
@@ -37,12 +36,10 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 'off',
     'global-require': 'off',
     'no-class-assign': 'off',
-    'one-var': 'off',
-    'one-var-declaration-per-line': 'off',
-    'import/prefer-default-export': 'off',
     'react/sort-comp': 'off',
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn'
+    'react-hooks/exhaustive-deps': 'warn',
+    'no-unused-expressions': [ 'warn', { 'allowTernary': true } ]
   },
   settings: {
     'import/resolver': {

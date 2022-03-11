@@ -1,0 +1,24 @@
+@import '$scss/local';
+// --------------------- ===
+//  LOCAL VARS
+// ---------------------
+$table-br: map-get($radii, 'container');
+
+// --------------------- ===
+//  SCSS
+// ---------------------
+.wrapper {
+  @include soft-shadow;
+  width: 80rem;
+  max-width: calc(100% - 30px);
+  padding: 2px;
+  background: map-get($table-colors, 'background');
+  border-radius: $table-br;
+}
+
+.inset {
+  padding: 1.5rem;
+  background: map-get($table-colors, 'inset');
+  border-radius: $table-br;
+  overflow: auto;
+}

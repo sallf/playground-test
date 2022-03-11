@@ -1,0 +1,66 @@
+@import '$scss/local';
+
+.cell {
+  position: relative;
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  min-height: $table-row-height-sm;
+  padding-right: 1rem;
+  overflow: hidden;
+
+  @include breakpoint-up {
+    min-height: $table-row-height-lg;
+  }
+
+  &__header {
+    justify-content: flex-end;
+    white-space: normal;
+
+    .span {
+      white-space: normal;
+    }
+  }
+
+  @include breakpoint-down {
+    flex-basis: 50%;
+    flex-grow: 1 !important;
+
+    &__first {
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+.label {
+  display: block;
+  font-size: $text-xs;
+  text-transform: uppercase;
+  opacity: .4;
+
+  @include breakpoint-up {
+    @include sr-only; // would want to test if this is causing a double label on a screen reader
+  }
+}
+
+.span {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.divider {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: none;
+  width: 1px;
+  height: $table-row-height-lg / 2;
+  background: map-get($colors-translucent, 'white-10');
+  border-radius: 10px;
+  transform: translateY(-50%);
+
+  @include breakpoint-up {
+    display: block;
+  }
+}

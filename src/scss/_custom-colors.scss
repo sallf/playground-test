@@ -1,3 +1,6 @@
+// --------------------- ===
+//  COLORS
+// ---------------------
 /* --------------------- ===
   PRIMARY COLORS
 --------------------------- */
@@ -8,22 +11,23 @@ $colors-light: (
 // These colors have sufficient
 // contrast (4.5:1) with our white text (#FFFFFF)
 $colors-dark: (
-  'black': #222222,
+  'black': #222,
+  'mint': #1BBA8F,
+  'blackRock': #100127,
+  'indigo': #3F0E70,
+  'blueIndigo': #261075,
+  'blueRock': #39048B,
+  'blueGem': #5D13AC,
+  'cherryPie': #27064C,
+  'purpleHeart': #751CC1,
+  'seance': #651BAD,
+  'errorRed': #B50000,
+  'successGreen': #008040,
 );
 
-/* --------------------- ===
-  TEXT
---------------------------- */
-$colors-text: (
-  'black': map-get($colors-dark, 'black'),
-  'white': map-get($colors-light, 'white'),
-);
-
-/* --------------------- ===
-  INTERFACE
---------------------------- */
-$colors-interface: ( // TODO let's break these out into multiple maps
-  'nav-background': map-get($colors-light, 'white-lilac'), // Example, remove
+$colors-decoration: (
+  'trustedPurple': #6A0FB7,
+  'marion': #2D0084,
 );
 
 /* --------------------- ===
@@ -39,6 +43,7 @@ $colors-translucent: (
   'black-70': rgba(0, 0, 0, .7),
   'black-80': rgba(0, 0, 0, .8),
   'black-90': rgba(0, 0, 0, .9),
+  'white-05': rgba(255, 255, 255, .05),
   'white-10': rgba(255, 255, 255, .1),
   'white-20': rgba(255, 255, 255, .2),
   'white-30': rgba(255, 255, 255, .3),
@@ -48,4 +53,60 @@ $colors-translucent: (
   'white-70': rgba(255, 255, 255, .7),
   'white-80': rgba(255, 255, 255, .8),
   'white-90': rgba(255, 255, 255, .9),
+);
+
+// --------------------- ===
+//  USES
+// ---------------------
+/* --------------------- ===
+  TEXT
+--------------------------- */
+$colors-text: (
+  'black': map-get($colors-dark, 'black'),
+  'white': map-get($colors-light, 'white'),
+);
+
+/* --------------------- ===
+  INTERFACE
+--------------------------- */
+$layout-gradient: (
+  'left': map-get($colors-decoration, 'trustedPurple'),
+  'right': map-get($colors-decoration, 'marion'),
+);
+
+$table-colors: (
+  'background': linear-gradient(90deg, map-get($colors-dark, 'blueGem'), map-get($colors-dark, 'blueRock')),
+  'inset': map-get($colors-dark, 'blackRock'),
+  'header': map-get($colors-dark, 'indigo'),
+  'body': map-get($colors-dark, 'cherryPie'),
+);
+
+$primary-btn-colors: (
+  'bg': map-get($colors-dark, 'mint'),
+  'text': map-get($colors-text, 'white'),
+);
+
+$modal-primary-btn-colors: (
+  'bg': map-get($colors-dark, 'seance'),
+  'text': map-get($colors-text, 'white'),
+);
+
+$modal-secondary-btn-colors: (
+  'bg': map-get($colors-dark, 'blueIndigo'),
+  'text': map-get($colors-text, 'white'),
+);
+
+$scrollbar-colors: (
+  'track': map-get($colors-dark, 'cherryPie'),
+  'thumb': map-get($colors-dark, 'purpleHeart'),
+);
+
+$modal-colors: (
+  'background': linear-gradient(90deg, map-get($colors-dark, 'seance'), map-get($colors-dark, 'blueIndigo')),
+  'inset': map-get($colors-dark, 'blackRock'),
+);
+
+$alert-colors: (
+  'success': map-get($colors-dark, 'successGreen'),
+  'error': map-get($colors-dark, 'errorRed'),
 );

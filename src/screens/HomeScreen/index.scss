@@ -1,1 +1,17 @@
 @import '$scss/local';
+
+.wrapper {
+  // This is better than something like height: 100vh for a fullscreen that doesn't overflow
+  // becuase mobile browsers calculate vh differently
+  @include safe-fixed-flex;
+  background: linear-gradient(45deg, map-get($layout-gradient, 'right'), map-get($layout-gradient, 'left'));
+};
+
+.alertWrapper {
+  position: fixed;
+  top: 0;
+  z-index: $z-index-alert;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
