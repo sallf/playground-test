@@ -2,7 +2,7 @@
 // --------------------- ===
 //  LOCAL VARS
 // ---------------------
-$table-row-count-sm: 5;
+$table-row-count-sm: 4;
 $table-row-count-lg: 3;
 
 // --------------------- ===
@@ -10,7 +10,7 @@ $table-row-count-lg: 3;
 // ---------------------
 .body {
   // Three rows high, but we only need 2 margins
-  height: ($table-row-height-sm * $table-row-count-sm) + ($table-row-margin-sm * ($table-row-count-sm - 1));
+  height: calc(min(#{($table-row-height-sm * $table-row-count-sm) + ($table-row-margin-sm * ($table-row-count-sm - 1))}, 80vh));
   overflow: auto;
   direction: rtl; // gets the scrollbar on the left
 
