@@ -18,7 +18,7 @@ const DropdownBtn = (props) => {
   // ---------------------
   return (
     <button
-      className={styles.btn}
+      className={`${styles.btn} ${isDown ? styles.btn__isDown : ''}`}
       type="button"
       onClick={onClick}
     >
